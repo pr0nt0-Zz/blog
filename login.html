@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - pr0nt0</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="kitty.png">
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 2rem;
+        }
+
+        .login-card {
+            background: var(--card);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px var(--shadow);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-card h2 {
+            text-align: center;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            color: var(--text);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-hover);
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+        }
+
+        .login-btn {
+            background: var(--accent);
+            color: var(--bg);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .login-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .error-message {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .back-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: var(--accent-hover);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">pr0nt0</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="ctf.html">CTF Writeups</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="login-card">
+                <h2>🔐 Admin Login</h2>
+
+                {% if error %}
+                <div class="error-message">{{ error }}</div>
+                {% endif %}
+
+                <form method="POST" class="login-form">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required autofocus
+                            placeholder="Enter admin password">
+                    </div>
+
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+
+                <div class="back-link">
+                    <a href="ctf.html">← Back to CTF Writeups</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Muhammad Zailan | Networking & Cybersecurity</p>
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank">GitHub</a> |
+                <a href="#" target="_blank">Twitter</a> |
+                <a href="mailto:example@email.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

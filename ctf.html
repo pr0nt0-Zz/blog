@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Writeups - pr0nt0</title>
+    <meta name="description" content="Capture The Flag writeups and cybersecurity challenge solutions">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="kitty.png">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">pr0nt0</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="ctf.html">CTF Writeups</a></li>
+                </ul>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div id="admin-controls"></div>
+                    <button id="theme-toggle" class="theme-toggle">🌙</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- CTF Writeups Section -->
+        <section id="ctf" class="section">
+            <div class="container">
+                <h2>CTF Writeups</h2>
+
+                <!-- Upload Form (Admin Only) -->
+                <div id="upload-section" style="display: none;">
+                    <div class="upload-container">
+                        <h3>Upload New Writeup</h3>
+                        <form id="upload-form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" required
+                                    placeholder="e.g., HackTheBox - Devvortex">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description (Optional)</label>
+                                <textarea id="description" name="description" rows="3"
+                                    placeholder="Brief description of the challenge..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="file">PDF File</label>
+                                <input type="file" id="file" name="file" accept=".pdf" required>
+                                <small>Maximum file size: 16MB</small>
+                            </div>
+
+                            <button type="submit" class="upload-btn">
+                                <span id="upload-btn-text">Upload Writeup</span>
+                                <span id="upload-spinner" style="display: none;">Uploading...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- PDF List -->
+                <div id="pdf-grid" class="pdf-grid">
+                    <div style="text-align: center; padding: 3rem; color: var(--text);">
+                        <p>Loading writeups...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Muhammad Zailan | Networking & Cybersecurity</p>
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank">GitHub</a> |
+                <a href="#" target="_blank">Twitter</a> |
+                <a href="mailto:example@email.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="ctf.js"></script>
+</body>
+
+</html>
