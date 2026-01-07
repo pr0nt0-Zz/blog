@@ -16,7 +16,7 @@ app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-producti
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf'}
 MAX_FILE_SIZE = 16 * 1024 * 1024  # 16MB
-ADMIN_PASSWORD_HASH = generate_password_hash('admin123')  # Change this password!
+ADMIN_PASSWORD_HASH = generate_password_hash('Zailan@gila234')  # Change this password!
 
 # Create upload directory if it doesn't exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
