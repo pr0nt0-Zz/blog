@@ -163,4 +163,9 @@ if __name__ == '__main__':
     print(f"Default admin password: admin123")
     print("IMPORTANT: Change the password in app.py (ADMIN_PASSWORD_HASH)")
     print("=" * 60)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    
+    # Get port from environment variable (for deployment) or use 5000 for local
+    port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_ENV') != 'production'
+    
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)
